@@ -39,8 +39,8 @@ Basic functionalities
 ```
 # How to use
 
-* Add the Jade files in _views_ path in the same way that freemaker _.ftl.html_ files. Instead use _.jade_ as the extension
-* Reference the _jade4ninja_ module in your in your application
+* Add the Jade files in views path in the same way that freemaker `.ftl.html` files. Instead use `.jade` as the extension
+* Reference the `jade4ninja` module in your in your application
 ```java
 @Singleton
 public class Module extends AbstractModule {
@@ -50,7 +50,7 @@ public class Module extends AbstractModule {
         
         install(new Jade4NinjaModule());
         
-        bind(StartupActions.class);    
+        ...    
         
     }
 
