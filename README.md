@@ -4,7 +4,7 @@ Jade4Ninja(beta) give support for Jade4J for Java templating
 
 Basic functionalities
 
-## How to use
+## Installation
 
 
 * Add repository
@@ -37,10 +37,28 @@ Basic functionalities
         </exclusions>
     </dependency>
 ```
+# How to use
 
-* Add the Jade files in _views_ path in the same way that _.ftl.html_ files
+* Add the Jade files in _views_ path in the same way that freemaker _.ftl.html_ files. Instead use _.jade_ as the extension
+* Reference the _jade4ninja_ module in your in your application
+```java
+@Singleton
+public class Module extends AbstractModule {
+    
 
-* See a full usage example in _jade4ninja-demo_
+    protected void configure() {
+        
+        install(new Jade4NinjaModule());
+        
+        bind(StartupActions.class);    
+        
+    }
+
+}
+```
+* Replace the default system views for `403` and `404` pages in `views/system` with the jade [specific](/jade4ninja-demo/src/main/java/views/system/4043forbidden.jade) [ones](/jade4ninja-demo/src/main/java/views/system/403forbidden.jade)
+
+For more information, see a full usage example in _jade4ninja-demo_
 
 
 
